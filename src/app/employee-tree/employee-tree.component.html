@@ -1,13 +1,17 @@
-<div class="employee-box">
-  {{ employee.firstName }} {{ employee.lastName }}
-</div>
+<div class="tree-node">
+  <div class="employee-box">
+    {{ employee.firstName }} {{ employee.lastName }}
+  </div>
 
-<div class="subordinates" *ngIf="employee.subordinates?.length">
-  <div class="line-down"></div>
-  <div class="children">
-    <div *ngFor="let sub of employee.subordinates" class="child">
-      <div class="line-up"></div>
-      <app-employee-tree [employee]="sub"></app-employee-tree>
+  <div *ngIf="employee.subordinates?.length" class="tree-children-wrapper">
+    <div class="line-down"></div>
+    <div class="tree-children">
+      <ng-container *ngFor="let sub of employee.subordinates">
+        <div class="tree-child">
+          <div class="line-up"></div>
+          <app-employee-tree [employee]="sub"></app-employee-tree>
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>
