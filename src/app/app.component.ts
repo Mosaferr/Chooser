@@ -43,4 +43,21 @@ export class AppComponent implements OnInit {
 
     return findHierarchy(this.employeeHierarchy);
   }
+
+  // Funkcja renderująca drzewo hierarchii
+  renderHierarchy(employee: any): string {
+    if (!employee) return '';
+
+    let result = `${employee.firstName} ${employee.lastName}`;
+
+    if (employee.subordinates && employee.subordinates.length > 0) {
+      result += '<ul>';
+      for (let sub of employee.subordinates) {
+        result += `<li>${this.renderHierarchy(sub)}</li>`;
+      }
+      result += '</ul>';
+    }
+
+    return result;
+  }
 }

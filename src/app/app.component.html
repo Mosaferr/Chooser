@@ -9,6 +9,6 @@
 <div *ngIf="selectedEmployeeId">
   <h3>Hierarchia wybranego pracownika:</h3>
   <div *ngIf="getEmployeeHierarchy(selectedEmployeeId)">
-    <pre>{{ getEmployeeHierarchy(selectedEmployeeId) | json }}</pre>
+    <div [innerHTML]="renderHierarchy(getEmployeeHierarchy(selectedEmployeeId))"></div>
   </div>
 </div>
