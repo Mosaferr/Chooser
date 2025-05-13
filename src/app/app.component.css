@@ -34,8 +34,8 @@ select {
   font-weight: bold;
 }
 
-h3, label, select, .description {
-  font-family: 'Times New Roman', Times, serif;
+h3 {
+  font-family: Georgia, serif;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -51,6 +51,7 @@ label, select, .description {
   display: flex;
   justify-content: space-around;
   margin-bottom: 40px;
+  font-weight: bold;
 }
 
 .sort-button {

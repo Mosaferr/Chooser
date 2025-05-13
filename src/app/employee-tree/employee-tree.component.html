@@ -1,20 +1,15 @@
 <div class="tree-node">
   <div class="employee-box">
-    <div class="manager">
-      <span class="manager-name">{{ employee.firstName }} {{ employee.lastName }}</span>
-    </div>
+    {{ employee.firstName }} {{ employee.lastName }}
   </div>
 
   <div *ngIf="employee.subordinates?.length" class="tree-children-wrapper">
     <div class="line-down"></div>
-    <div class="tree-children">
-      <div *ngFor="let sub of employee.subordinates" class="child">
-        <div class="line-up"></div>
-        <!-- Owijamy komponent w tree-container -->
-        <div class="tree-container">
+      <div class="tree-children">
+        <div *ngFor="let sub of employee.subordinates" class="child">
+          <div class="line-up"></div>
           <app-employee-tree [employee]="sub"></app-employee-tree>
         </div>
       </div>
-    </div>
   </div>
 </div>

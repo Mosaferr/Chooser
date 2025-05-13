@@ -1,6 +1,6 @@
 
 <div class="container">
-  <h3>Wybierz pracownika i sprawdź jego hierarchię:</h3>
+  <h3>Wybierz pracownika i sprawdź jego hierarchię</h3>
 
   <!-- Kontener przycisków sortowania -->
   <div class="sort-buttons">
@@ -11,6 +11,7 @@
 
   <!-- Dropdown do wyboru pracownika -->
   <select [(ngModel)]="selectedEmployeeId">
+<option value="" disabled selected>-- Wybierz pracownika --</option>
     <option *ngFor="let emp of employees" [value]="emp.id">
       {{ emp.firstName }} {{ emp.lastName }}
     </option>
