@@ -5,13 +5,11 @@
 
   <div *ngIf="employee.subordinates?.length" class="tree-children-wrapper">
     <div class="line-down"></div>
-    <div class="tree-children">
-      <ng-container *ngFor="let sub of employee.subordinates">
-        <div class="tree-child">
+      <div class="tree-children">
+        <div *ngFor="let sub of employee.subordinates" class="child">
           <div class="line-up"></div>
           <app-employee-tree [employee]="sub"></app-employee-tree>
         </div>
-      </ng-container>
-    </div>
+      </div>
   </div>
 </div>

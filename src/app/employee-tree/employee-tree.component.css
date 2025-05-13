@@ -1,3 +1,4 @@
+
 .tree-node {
   display: flex;
   flex-direction: column;
@@ -12,7 +13,6 @@
   background-color: #e0f7fa;
   border: 2px solid #00796b;
   border-radius: 5px;
-  margin: 8px 0;
   text-align: center;
 }
 
@@ -23,10 +23,12 @@
   align-items: center;
 }
 
-.line-down {
+.line-down,
+.line-up {
   width: 2px;
-  height: 20px;
+  height: 25px;
   background-color: #00796b;
+  margin: 0 auto;
 }
 
 .tree-children {
@@ -34,24 +36,52 @@
   justify-content: center;
   align-items: flex-start;
   position: relative;
-  margin-top: 10px;
   gap: 20px; /* odstęp między podwładnymi */
+  padding: 0 10px;
+  min-height: 20px; /* zapewnia miejsce dla poziomej linii */
 }
 
-.line-up {
-  width: 2px;
-  height: 20px;
-  background-color: #00796b;
-  /* margin-bottom: 4px; */
+.child {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Pozioma linia między dziećmi */
-.tree-children::before {
+/* Pozioma linia z lewej strony */
+.child:not(:first-child)::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
   height: 2px;
+  width: 50%;
   background-color: #00796b;
 }
+
+/* Pozioma linia z prawej strony */
+.child:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 50%;
+  background-color: #00796b;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.child {
+  animation: fadeInDown 0.3s ease-in;
+}
+
