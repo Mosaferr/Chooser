@@ -1,15 +1,20 @@
 <div class="tree-node">
   <div class="employee-box">
-    {{ employee.firstName }} {{ employee.lastName }}
+    <div class="manager">
+      <span class="manager-name">{{ employee.firstName }} {{ employee.lastName }}</span>
+    </div>
   </div>
 
   <div *ngIf="employee.subordinates?.length" class="tree-children-wrapper">
     <div class="line-down"></div>
-      <div class="tree-children">
-        <div *ngFor="let sub of employee.subordinates; let i = index" class="child" [ngStyle]="{'animation-delay': i * 0.1 + 's'}">
-          <div class="line-up"></div>
+    <div class="tree-children">
+      <div *ngFor="let sub of employee.subordinates" class="child">
+        <div class="line-up"></div>
+        <!-- Owijamy komponent w tree-container -->
+        <div class="tree-container">
           <app-employee-tree [employee]="sub"></app-employee-tree>
         </div>
       </div>
+    </div>
   </div>
 </div>

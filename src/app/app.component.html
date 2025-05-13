@@ -1,3 +1,4 @@
+
 <div class="container">
   <h3>Wybierz pracownika i sprawdź jego hierarchię:</h3>
 
@@ -14,9 +15,11 @@
       {{ emp.firstName }} {{ emp.lastName }}
     </option>
   </select>
+</div>
 
   <div *ngIf="selectedEmployeeId">
     <h3>Hierarchia:</h3>
     <app-employee-tree [employee]="getEmployeeHierarchy(selectedEmployeeId)"></app-employee-tree>
   </div>
-</div>
+
+

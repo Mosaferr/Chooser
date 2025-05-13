@@ -1,15 +1,28 @@
 
+.tree-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .tree-node {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  min-width: max-content;
 }
 
 .employee-box {
   font-family: Arial, sans-serif;
-  font-weight: bold;
-  padding: 8px 16px;
+  max-width: 80px;
+  word-break: break-word;
+  white-space: normal;
+  font-weight: normal;
+  padding: 6px 10px;
   background-color: #e0f7fa;
   border: 2px solid #00796b;
   border-radius: 5px;
@@ -36,9 +49,9 @@
   justify-content: center;
   align-items: flex-start;
   position: relative;
-  gap: 20px; /* odstęp między podwładnymi */
-  padding: 0 10px;
-  min-height: 20px; /* zapewnia miejsce dla poziomej linii */
+  /* gap: 0px; */
+  padding: 0;
+  min-height: 20px;
 }
 
 .child {
@@ -46,6 +59,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 6px;
+  animation: fadeInDown 0.3s ease-in;
 }
 
 /* Pozioma linia z lewej strony */
@@ -70,18 +85,14 @@
   background-color: #00796b;
 }
 
+
 @keyframes fadeInDown {
-  0% {
+  from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-100px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
-.child {
-  animation: fadeInDown 0.5s ease-out forwards;
-}
-
