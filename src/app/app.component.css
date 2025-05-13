@@ -36,10 +36,43 @@ select {
 h3, label, select, .description {
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.5rem;
-  font-weight: bold
+  font-weight: bold;
 }
+
 label, select, .description {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
-  font-weight: normal
+  font-weight: normal;
+}
+
+/* Styl dla przycisków sortowania */
+.sort-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.sort-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sort-button:hover {
+  background-color: #45a049;
+}
+
+.sort-button.active {
+  background-color: #3e8e41;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sort-button:focus {
+  outline: none;
 }

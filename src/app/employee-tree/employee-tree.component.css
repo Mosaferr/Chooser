@@ -35,21 +35,14 @@
   align-items: flex-start;
   position: relative;
   margin-top: 10px;
-}
-
-.tree-child {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 15px;
-  position: relative;
+  gap: 20px; /* odstęp między podwładnymi */
 }
 
 .line-up {
   width: 2px;
   height: 20px;
   background-color: #00796b;
-  margin-bottom: 4px;
+  /* margin-bottom: 4px; */
 }
 
 /* Pozioma linia między dziećmi */
