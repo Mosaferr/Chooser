@@ -1,14 +1,16 @@
-<div>
+<div class="container">
+  <h3>Wybierz pracownika i sprawdź jego hierarchię:</h3>
+
   <select [(ngModel)]="selectedEmployeeId">
     <option *ngFor="let emp of employees" [value]="emp.id">
       {{ emp.firstName }} {{ emp.lastName }}
     </option>
   </select>
-</div>
 
-<div *ngIf="selectedEmployeeId">
-  <h3>Hierarchia wybranego pracownika:</h3>
-  <div *ngIf="getEmployeeHierarchy(selectedEmployeeId)">
-    <div [innerHTML]="renderHierarchy(getEmployeeHierarchy(selectedEmployeeId))"></div>
+  <div *ngIf="selectedEmployeeId">
+    <h3>Hierarchia wybranego pracownika:</h3>
+    <div *ngIf="getEmployeeHierarchy(selectedEmployeeId)">
+      <div [innerHTML]="renderHierarchy(getEmployeeHierarchy(selectedEmployeeId))"></div>
+    </div>
   </div>
 </div>
