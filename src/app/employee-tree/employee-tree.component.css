@@ -1,0 +1,49 @@
+.employee-box {
+  border: 2px solid #00796b;
+  background-color: #ffffff;
+  /* background-color: #f2fcfd; */
+  padding: 5px 15px;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.subordinates {
+  margin-top: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.line-down {
+  width: 2px;
+  height: 20px;
+  background: #00796b;
+  margin: 0 auto;
+}
+
+.children {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+}
+
+.child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.line-up {
+  width: 2px;
+  height: 20px;
+  background: #00796b;
+  margin-bottom: 10px;
+}
